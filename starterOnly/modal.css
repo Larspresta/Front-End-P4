@@ -33,8 +33,12 @@ img {
 .topnav {
   overflow: hidden;
   margin: 3.5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 .header-logo {
+  margin-top: 5px;
     float: left;
 }
 .main-navbar {
@@ -74,6 +78,9 @@ img {
     float: right;
     display: block;
   }
+  img {
+    width: 15vh;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -97,8 +104,8 @@ img {
   .topnav a.icon {
     float: right;
     display: block;
-    margin-top: -15px;
   }
+
 } 
 
 main {
