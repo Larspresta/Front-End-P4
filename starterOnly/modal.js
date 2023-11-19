@@ -11,6 +11,10 @@ function editNav() {
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
+const heroContent = document.querySelector (".hero-content");
+const subConfirmation = document.createElement('p')
+const btnSubmit = document.getElementById('btn-sub');
+const closeForm = document.getElementById('close-form');
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -19,3 +23,19 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 function launchModal() {
   modalbg.style.display = "block";
 }
+
+// close modal form
+
+closeForm.addEventListener('click', () => {
+  modalbg.style.display = 'none';
+});
+
+// add confirmation element
+subConfirmation.textContent = 'Thank you for registering!';
+subConfirmation.style.color = '#fe142f'
+
+btnSubmit.addEventListener('click', () => {
+  heroContent.appendChild(subConfirmation);
+});
+
+
