@@ -470,6 +470,11 @@ input[data-error]::after {
   display: block;
   padding: 0;
 }
+
+.red-reg {
+  color: #fe142f;
+  font-size: 2rem;
+}
 .copyrights {
   color: #fe142f;
   padding: 0;

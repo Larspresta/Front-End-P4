@@ -31,21 +31,6 @@ closeForm.addEventListener('click', () => {
   modalbg.style.display = 'none';
 });
 
-// add confirmation element
-/* subConfirmation.textContent = 'Thank you for registering!';
-subConfirmation.style.color = '#fe142f'
-
-btnSubmit.addEventListener('click', () => {
-  heroContent.appendChild(subConfirmation);
-}); */
-
-const lastNameInput = document.getElementById ('last');
-const emailInput = document.getElementById ('email');
-const checkbox1Input = document.getElementById ('checkbox1');
-const firstNameInput = document.getElementById('first');
-
-const regForm = document.getElementById('regform');
-
 function validate() {
   const formDataElements = document.querySelectorAll('.formData');
   hideAllErrors(formDataElements);
