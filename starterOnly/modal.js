@@ -44,33 +44,50 @@ const emailInput = document.getElementById ('email');
 const checkbox1Input = document.getElementById ('checkbox1');
 const firstNameInput = document.getElementById('first');
 
+const regForm = document.getElementById('regform');
+
 function validate() {
+  const formDataElements = document.querySelectorAll('.formData');
+  hideAllErrors(formDataElements);
 
-  console.log('Validation function called');
+  const firstNameValue = document.getElementById('first').value.trim();
+  const lastNameValue = document.getElementById('last').value.trim();
+  const emailValue = document.getElementById('email').value.trim();
+  const checkbox1Agree = document.getElementById('checkbox1').checked;
 
-    const firstNameValue = firstNameInput.value.trim();
-    const lastNameValue = lastNameInput.value.trim();
-    const emailValue = emailInput.value.trim();
-    const checkbox1Agree = checkbox1Input.checked;
-  
-
-  if (firstNameValue.length <2 || firstNameValue.length > 20) {
+  if (firstNameValue.length < 2 || firstNameValue.length > 20) {
+    displayError('We need your first name!', 'first');
     return false;
   }
 
-  if (lastNameValue.length <2 || lastNameValue.length > 20) {
+  if (lastNameValue.length < 2 || lastNameValue.length > 20) {
+    displayError('We need your last name!', 'last');
     return false;
   }
 
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailPattern.test(emailValue)) {
+    displayError('Check your email address!', 'email');
     return false;
   }
 
   if (!checkbox1Agree) {
+    displayError('Check the box please!', 'checkbox1');
     return false;
   }
 
   return true;
+}
 
+function displayError(errorMessage, inputId) {
+  const formDataElement = document.getElementById(inputId).closest('.formData');
+  formDataElement.dataset.error = errorMessage;
+  formDataElement.dataset.errorVisible = 'true';
+}
+
+function hideAllErrors(formDataElements) {
+  formDataElements.forEach((formDataElement) => {
+    formDataElement.dataset.error = '';
+    formDataElement.dataset.errorVisible = 'false';
+  });
 }
