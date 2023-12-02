@@ -1,5 +1,7 @@
 Project 4 - Front-end Dashboard
 
+Link to repository: https://github.com/Larspresta/Front-End-P4
+
 This repo contains all the starting code you need to add the functionality requirements/deliverables for Project 4.
 
 1. Fork this repository.

@@ -39,6 +39,8 @@ function validate() {
   const lastNameValue = document.getElementById('last').value.trim();
   const emailValue = document.getElementById('email').value.trim();
   const checkbox1Agree = document.getElementById('checkbox1').checked;
+  const bdayValue = document.getElementById('birthdate').value;
+  const tournaments = document.getElementById('quantity').value;
 
   if (firstNameValue.length < 2 || firstNameValue.length > 20) {
     displayError('We need your first name!', 'first');
@@ -53,6 +55,16 @@ function validate() {
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailPattern.test(emailValue)) {
     displayError('Check your email address!', 'email');
+    return false;
+  }
+
+  if (bdayValue.length < 8) {
+    displayError('We need your birthday!', 'birthdate');
+    return false;
+  }
+
+  if (!tournaments) {
+    displayError('How many tournaments', 'quantity');
     return false;
   }
 
